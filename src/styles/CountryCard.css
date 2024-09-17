@@ -1,0 +1,39 @@
+.card-country {
+  width: 350px;
+  height: 425px;
+  background-color: hsl(209, 23%, 22%);
+}
+
+.card-country-leading {
+  height: 200px;
+  overflow: hidden; /* Masque les parties de l'image qui débordent */
+}
+
+.card-country-flag {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-country-infos {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.card-country-title {
+  padding-left: 10px;
+}
+
+.card-country-title > h1 {
+  word-wrap: break-word;
+  white-space: normal;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.card-country-infos {
+  padding-left: 10px;
+  padding-right: 10px;
+}
