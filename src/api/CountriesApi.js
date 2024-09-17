@@ -6,6 +6,13 @@ const apiVersion = 'v3.1';
 const apiUrl = `${baseUrl}/${apiVersion}`;
 
 export const GetCountries = async () => {
+  const param = 'all';
+  try {
+    return await FetchDatas(param);
+  } catch (error) {
+    console.error('Error fetching countries: ', error);
+    return null;
+  }
 };
 
 async function FetchDatas(param) {
