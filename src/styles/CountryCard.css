@@ -2,11 +2,13 @@
   width: 350px;
   height: 425px;
   background-color: hsl(209, 23%, 22%);
+  border-radius: 5px;
 }
 
 .card-country-leading {
   height: 200px;
   overflow: hidden; /* Masque les parties de l'image qui débordent */
+  border-radius: 5px 5px 0px 0px;
 }
 
 .card-country-flag {
