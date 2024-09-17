@@ -1,9 +1,57 @@
-.country-list {
-  margin-left: 50px;
-  margin-right: 50px;
+.container {
   list-style-type: none;
+  max-width: 85vw;
+  height: 100vh;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5%;
+}
+
+.search-country, .control-country {
+  background-color: hsl(209, 23%, 22%);
+  color: white;
+}
+
+.control-country {
+  border: none;
+  height: 50px;
+  border-radius: 5px;
+}
+
+.icon-search-bar {
+  margin-left: 25px;
+}
+
+.search-bar {
+  width: 400px;
+  margin-left: 20px;
+}
+
+.search-bar::placeholder {
+  color: white;
+}
+
+.select-region {
+  padding: 0px 40px 0px 20px;
+}
+
+.search-bar:focus, .select-region:focus, .select-region > option:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+
+.country-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 80px;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 0;
 }
