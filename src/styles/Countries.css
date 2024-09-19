@@ -11,10 +11,11 @@
 .controls {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 5%;
+  margin-bottom: 2%;
 }
 
-.search-country, .control-country {
+.search-country,
+.control-country {
   background-color: hsl(209, 23%, 22%);
   color: white;
 }
@@ -42,11 +43,12 @@
   padding: 0px 40px 0px 20px;
 }
 
-.search-bar:focus, .select-region:focus, .select-region > option:focus {
+.search-bar:focus,
+.select-region:focus,
+.select-region > option:focus {
   outline: none;
   box-shadow: none;
 }
-
 
 .country-list {
   display: flex;
@@ -54,4 +56,10 @@
   justify-content: space-between;
   gap: 40px;
   padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  background-color: transparent;
 }

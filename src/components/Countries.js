@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 import { GetCountries } from '../api/CountriesApi';
 import CountryCard from './CountryCard';
@@ -36,12 +37,9 @@ export default function Countries() {
 
   const filterRegion = (e) => {
     let region = e.target.value;
-    if(region === "America")
-      region = "Americas";
+    if (region === 'America') region = 'Americas';
     setRegionFilter(region);
   };
-
-  console.log(countries);
 
   if (error) return <div>{error}</div>;
 
@@ -56,7 +54,10 @@ export default function Countries() {
             onChange={filterCountry}
           />
         </div>
-        <select className="control-country select-region" onChange={filterRegion}>
+        <select
+          className="control-country select-region"
+          onChange={filterRegion}
+        >
           <option value="default">Filter by Region</option>
           {regions.map((region) => (
             <option value={region} key={region}>
@@ -83,9 +84,15 @@ export default function Countries() {
 
             return true;
           })
-          .map((country) => (
-            <CountryCard country={country} />
-          ))}
+          .map((country) => {
+            return (
+              <>
+                <Link to={`/country/${country.ccn3}`} state={{country: country}}>
+                  <CountryCard country={country} />
+                </Link>
+              </>
+            );
+          })}
       </div>
     </div>
   );
