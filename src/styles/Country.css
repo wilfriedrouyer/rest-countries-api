@@ -1,0 +1,121 @@
+.country-body {
+  display: flex;
+  flex-direction: column;
+  gap: 75px;
+}
+
+a {
+  font-family: 'NunitoSans';
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.back-home-input{
+  background-color: hsl(209, 23%, 22%);
+  color: white;
+  width: 100px;
+  padding: 6px 6px 6px 2px;
+  box-shadow: 0px 0px 10px hsl(213, 28%, 15%);
+  border-radius: 5px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-left-arrow {
+  padding-right: 10px;
+}
+
+.country-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5%;
+}
+
+.country-datas {
+  display: flex;
+}
+
+.country-flag {
+  width: 22vw;
+  min-width: 320px;
+}
+
+.country-infos {
+  font-family: 'NunitoSans';
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 35px;
+}
+
+.country-infos-detail {
+  display: flex;
+  flex-direction: row;
+  gap: 10vw;
+}
+
+.country-name {
+  font-size: 24px !important;
+  font-weight: 800;
+}
+
+.country-detail {
+  font-weight: 300;
+  height: 25px;
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+}
+
+.country-infos-detail-column {
+  width: auto;
+}
+
+.country-detail-text {
+  color: white;
+  font-size: 16px;
+  display: flex;
+  flex-direction: row;
+}
+
+.country-border {
+  height: 50px;
+}
+
+.border-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.borders {
+  margin-left: 5px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.border-link {
+  background-color: hsl(209, 23%, 22%);
+  padding: 2px 25px 2px 25px;
+  box-shadow: 0px 0px 10px hsl(213, 28%, 15%);
+}
+
+/***********FONT FAMILIES****************/
+
+@font-face {
+  font-family: 'NunitoSans';
+  src: url('..//assets/fonts/Nunito_Sans/NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf')
+    format('truetype');
+}
+
+@font-face {
+  font-family: 'NunitoSans-Italic';
+  src: url('../assets/fonts/Nunito_Sans/NunitoSans-Italic-VariableFont_YTLC,opsz,wdth,wght.ttf')
+    format('truetype');
+}
