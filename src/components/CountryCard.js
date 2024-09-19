@@ -1,16 +1,14 @@
 import React from 'react';
 
 import '../styles/CountryCard.css';
+import { FormateNumber } from '../helper/Formatter';
 
 export default function CountryCard({ country }) {
-  const formatPopulation = (population) => {
-    return population;
-  };
 
   return (
     <div className="card-country">
       <div className="card-country-leading">
-        <img className='card-country-flag' src={country.flags.png} alt={`Flag of ${country.name.commo}`} />
+        <img className='card-country-flag' src={country.flags.png} alt={`Flag of ${country.name.common}`} />
       </div>
       <div className="card-country-infos">
         <div className="card-country-title">
@@ -19,7 +17,7 @@ export default function CountryCard({ country }) {
         <div className="card-country-infos">
           <p>
             <b>Population: </b>
-            {formatPopulation(country.population)}
+            {FormateNumber(country.population)}
             <br />
             <b>Region: </b>
             {country.region}
