@@ -15,9 +15,19 @@ export const GetCountries = async () => {
   }
 };
 
+export const GetCountry = async (code) => {
+  const param = `alpha/${code}`;
+  try {
+    return await FetchDatas(param);
+  } catch (error) {
+    console.error('Error fetching countries: ', error);
+    return null;
+  }
+};
+
 async function FetchDatas(param) {
   const url = `${apiUrl}/${param}`;
   const response = await axios.get(url);
-  
+
   return response.data;
 }
