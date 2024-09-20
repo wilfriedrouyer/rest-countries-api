@@ -70,11 +70,41 @@ export default function Country() {
     navigate('/');
   };
 
+  const flexContainer = document.querySelector('.country-container');
+  const items = document.querySelectorAll('.country-datas');
+
+  const adjustJustifyContent = () => {
+    if (flexContainer !== null) {
+      const containerWidth = flexContainer.offsetWidth;
+      const numberOfGaps = items.length - 1;
+      const gapWidth = containerWidth * 0.05;
+
+      const totalGapWidth = numberOfGaps * gapWidth;
+
+      const totalWidth = Math.round(
+        Array.from(items).reduce((acc, item) => acc + item.offsetWidth, 0) +
+          totalGapWidth
+      );
+
+      if (totalWidth >= flexContainer.offsetWidth) {
+        items.forEach((item) => {
+          item.style.margin = 'auto';
+        });
+      } else {
+        items.forEach((item) => {
+          item.style.margin = '0';
+        });
+      }
+    }
+  };
 
   const GetNativeName = (nativeNames) => {
     const nativeNamesObject = Object.values(nativeNames);
     return nativeNamesObject[nativeNamesObject.length - 1].common;
   };
+
+  window.addEventListener('resize', adjustJustifyContent);
+  window.addEventListener('load', adjustJustifyContent);
 
   return (
     <>
@@ -93,14 +123,14 @@ export default function Country() {
             </div>
           </Link>
           <div className="country-container">
-            <div>
+            <div className="country-container-flag country-datas">
               <img
                 className="country-flag"
                 src={country.flags.png}
                 alt={`Flag of ${country.name.common}`}
               />
             </div>
-            <div className="country-infos">
+            <div className="country-infos country-datas">
               <div className="country-name country-detail-text">
                 {country.name.common}
               </div>
@@ -130,7 +160,8 @@ export default function Country() {
                   </div>
                   <div className="country-detail">
                     <p className="country-detail-text">
-                      <b>Capital:</b>&nbsp;{country.capital && country.capital[0]}
+                      <b>Capital:</b>&nbsp;
+                      {country.capital && country.capital[0]}
                     </p>
                   </div>
                 </div>
@@ -143,17 +174,17 @@ export default function Country() {
                   <div className="country-detail">
                     <p className="country-detail-text">
                       <b>Currencies:</b>&nbsp;
-                      {country.currencies && Object.values(country.currencies)
-                        .map((country) => country.name)
-                        .join(', ')}
+                      {country.currencies &&
+                        Object.values(country.currencies)
+                          .map((country) => country.name)
+                          .join(', ')}
                     </p>
                   </div>
                   <div className="country-detail">
                     <p className="country-detail-text">
                       <b>Languages:</b>&nbsp;
-                      <div className="languages">
-                        {country.languages && Object.values(country.languages).join(', ')}
-                      </div>
+                      {country.languages &&
+                        Object.values(country.languages).join(', ')}
                     </p>
                   </div>
                 </div>
@@ -161,28 +192,26 @@ export default function Country() {
               <div className="country-border">
                 <p className="country-detail-text border-content">
                   <b>Border Countries:</b>
-                  <div className="borders">
-                    {country.borders &&
-                      country.borders.map((border) => {
-                        const borderCountry = borders.find(
-                          (b) => b.cca3 === border
+                  {country.borders &&
+                    country.borders.map((border) => {
+                      const borderCountry = borders.find(
+                        (b) => b.cca3 === border
+                      );
+                      if (borderCountry) {
+                        return (
+                          <Link
+                            className="border-link"
+                            to={`/country/${borderCountry.ccn3}`}
+                            state={{ country: borderCountry }}
+                            key={borderCountry.ccn3}
+                          >
+                            {borderCountry.name.common}
+                          </Link>
                         );
-                        if (borderCountry) {
-                          return (
-                            <Link
-                              className="border-link"
-                              to={`/country/${borderCountry.ccn3}`}
-                              state={{ country: borderCountry }}
-                              key={borderCountry.ccn3}
-                            >
-                              {borderCountry.name.common}
-                            </Link>
-                          );
-                        }
+                      }
 
-                        return null;
-                      })}
-                  </div>
+                      return null;
+                    })}
                 </p>
               </div>
             </div>
