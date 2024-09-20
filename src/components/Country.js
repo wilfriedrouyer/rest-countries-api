@@ -192,6 +192,7 @@ export default function Country() {
               <div className="country-border">
                 <p className="country-detail-text border-content">
                   <b>Border Countries:</b>
+                  <div className="borders">
                   {country.borders &&
                     country.borders.map((border) => {
                       const borderCountry = borders.find(
@@ -212,6 +213,7 @@ export default function Country() {
 
                       return null;
                     })}
+                    </div>
                 </p>
               </div>
             </div>
