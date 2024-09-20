@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/rest-countries-api/static/css/main.c378bbca.css",
-    "main.js": "/rest-countries-api/static/js/main.d9711c2c.js",
+    "main.js": "/rest-countries-api/static/js/main.685f8dcc.js",
     "static/media/NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf": "/rest-countries-api/static/media/NunitoSans-VariableFont_YTLC,opsz,wdth,wght.61b71ee93d55d9bddead.ttf",
     "static/media/NunitoSans-Italic-VariableFont_YTLC,opsz,wdth,wght.ttf": "/rest-countries-api/static/media/NunitoSans-Italic-VariableFont_YTLC,opsz,wdth,wght.7f24c0208b4b0e7af738.ttf",
     "index.html": "/rest-countries-api/index.html",
     "main.c378bbca.css.map": "/rest-countries-api/static/css/main.c378bbca.css.map",
-    "main.d9711c2c.js.map": "/rest-countries-api/static/js/main.d9711c2c.js.map"
+    "main.685f8dcc.js.map": "/rest-countries-api/static/js/main.685f8dcc.js.map"
   },
   "entrypoints": [
     "static/css/main.c378bbca.css",
-    "static/js/main.d9711c2c.js"
+    "static/js/main.685f8dcc.js"
   ]
 }
