@@ -14,7 +14,7 @@ function App() {
     <div className={`app-body ${mode}`}>
       <Header />
       <Routes>
-        <Route path="/rest-countries/api" element={<Countries />} />
+        <Route path="/rest-countries-api" element={<Countries />} />
         <Route path="/rest-countries/api/country/:id" key={':id'} element={<Country />} />
       </Routes>
     </div>
