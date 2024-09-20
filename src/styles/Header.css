@@ -1,0 +1,50 @@
+.header {
+  background-color: hsl(209, 23%, 22%);
+  font-family: 'NunitoSans';
+  margin-bottom: 50px;
+}
+
+.header-content {
+  max-width: 85vw;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-title {
+  color: white;
+  font-weight: 800;
+}
+
+.header-theme-mode-button:hover {
+  cursor: pointer;
+}
+
+.header-theme-mode-button {
+  color: white;
+  background-color: transparent;
+  font-family: 'NunitoSans';
+  font-weight: 600;
+  height: 60px;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+/***********FONT FAMILIES****************/
+
+@font-face {
+  font-family: 'NunitoSans';
+  src: url('..//assets/fonts/Nunito_Sans/NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf')
+    format('truetype');
+}
+
+@font-face {
+  font-family: 'NunitoSans-Italic';
+  src: url('../assets/fonts/Nunito_Sans/NunitoSans-Italic-VariableFont_YTLC,opsz,wdth,wght.ttf')
+    format('truetype');
+}
