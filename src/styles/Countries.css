@@ -58,8 +58,9 @@
   padding: 0;
 }
 
-a {
+.card-country-link {
   text-decoration: none;
   color: inherit;
   background-color: transparent;
+  margin-top: 50px;
 }

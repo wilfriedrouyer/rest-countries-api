@@ -87,7 +87,7 @@ export default function Countries() {
           .map((country) => {
             return (
               <>
-                <Link to={`/country/${country.ccn3}`} state={{country: country}}>
+                <Link className='card-country-link' to={`/country/${country.ccn3}`} state={{country: country}}>
                   <CountryCard country={country} />
                 </Link>
               </>

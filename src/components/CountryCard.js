@@ -18,10 +18,10 @@ export default function CountryCard({ country }) {
           <p>
             <b>Population: </b>
             {FormateNumber(country.population)}
-            <br />
+            <span class="spaced-br"></span>
             <b>Region: </b>
             {country.region}
-            <br />
+            <span class="spaced-br"></span>
             <b>Capital: </b>
             {country.capital}
           </p>
