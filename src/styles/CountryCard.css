@@ -1,24 +1,43 @@
-.card-country {
-  width: 350px;
-  height: 400px;
-  background-color: hsl(209, 23%, 22%);
-  border-radius: 5px;
+@media (min-width: 413px) {
+  .card-country {
+    margin-left: auto;
+    margin-right: auto;
+    width: 375px;
+    height: 400px;
+    border-radius: 5px;
+  }
+
+  .card-country-leading {
+    height: 200px;
+    overflow: hidden; /* Masque les parties de l'image qui débordent */
+    border-radius: 5px 5px 0px 0px;
+  }
+
+  .card-country-flag {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
 }
 
-.card-country-leading {
-  height: 200px;
-  overflow: hidden; /* Masque les parties de l'image qui débordent */
-  border-radius: 5px 5px 0px 0px;
-}
+@media (max-width: 412px) {
+  .card-country {
+    padding-bottom: 20px;
+    border-radius: 5px;
+  }
+  
+  .card-country-leading {
+    overflow: hidden; /* Masque les parties de l'image qui débordent */
+    border-radius: 5px 5px 0px 0px;
+  }
 
-.card-country-flag {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
+  .card-country-flag {
+    width: 100%;
+    object-fit: cover;
+  }
 }
 
 .card-country-infos {
-  color: white;
   font-family: 'NunitoSans';
   display: flex;
   flex-direction: column;

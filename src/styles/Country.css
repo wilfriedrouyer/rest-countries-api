@@ -1,3 +1,61 @@
+
+@media (min-width: 413px) {
+  .country-infos-detail {
+    display: flex;
+    flex-direction: row;
+    gap: 10vw;
+  }
+  
+  .border-content {
+    max-width: 600px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .borders {
+    margin-left: 5px;
+  }
+
+  .country-flag {
+    width: 25vw;
+    min-width: 340px;
+  }
+}
+
+@media (max-width: 550px) {
+  .country-infos-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 10vw;
+  }
+
+  .country-infos-detail-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 412px) {
+  .border-content {
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+  }
+
+  .country-container-flag {
+    margin-bottom: 50px;
+  }
+  
+  .borders {
+    margin-top: 20px;
+  }
+}
+
+
 .country-body {
   max-width: 85vw;
   margin-left: auto;
@@ -12,13 +70,11 @@
   font-size: 15px;
   font-weight: 300;
   width: 100px;
+  text-decoration: none;
 }
 
-.back-home-input{
-  background-color: hsl(209, 23%, 22%);
-  color: white;
+.back-home-input {
   padding: 6px 6px 6px 2px;
-  box-shadow: 0px 0px 10px hsl(213, 28%, 15%);
   border-radius: 5px;
   border: none;
   display: flex;
@@ -42,23 +98,12 @@
   display: flex;
 }
 
-.country-flag {
-  width: 25vw;
-  min-width: 416px;
-}
-
 .country-infos {
   font-family: 'NunitoSans';
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 35px;
-}
-
-.country-infos-detail {
-  display: flex;
-  flex-direction: row;
-  gap: 10vw;
 }
 
 .country-name {
@@ -79,7 +124,6 @@
 }
 
 .country-detail-text {
-  color: white;
   font-size: 16px;
   display: flex;
   flex-direction: row;
@@ -89,15 +133,7 @@
   height: 50px;
 }
 
-.border-content {
-  max-width: 600px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
 .borders {
-  margin-left: 5px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -105,9 +141,7 @@
 }
 
 .border-link {
-  background-color: hsl(209, 23%, 22%);
   padding: 2px 25px 2px 25px;
-  box-shadow: 0px 0px 10px hsl(213, 28%, 15%);
   display: flex;
   align-items: center;
   justify-content: center;

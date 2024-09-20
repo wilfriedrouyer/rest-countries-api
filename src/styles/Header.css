@@ -1,7 +1,17 @@
+@media (min-width: 413px) {
+  .header {
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 412px) {
+  .header {
+    margin-bottom: 25px;
+  }
+}
+
 .header {
-  background-color: hsl(209, 23%, 22%);
   font-family: 'NunitoSans';
-  margin-bottom: 50px;
 }
 
 .header-content {
@@ -14,7 +24,6 @@
 }
 
 .header-title {
-  color: white;
   font-weight: 800;
 }
 
@@ -23,7 +32,6 @@
 }
 
 .header-theme-mode-button {
-  color: white;
   background-color: transparent;
   font-family: 'NunitoSans';
   font-weight: 600;
