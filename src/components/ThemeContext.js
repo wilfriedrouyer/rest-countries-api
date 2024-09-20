@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext } from 'react';
+import React, { createContext, useState, useContext, useEffect } from 'react';
 
 const ThemeContext = createContext();
 
@@ -13,6 +13,10 @@ export function ThemeProvider({ children }) {
         return 'dark';
     });
   };
+
+  useEffect(() => {
+    document.body.className = mode;
+  }, [mode]);
 
   return (
     <ThemeContext.Provider value={{ mode, toggleMode }}>

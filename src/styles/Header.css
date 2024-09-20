@@ -35,6 +35,24 @@
   gap: 10px;
 }
 
+.header.dark {
+  background-color: hsl(209, 23%, 22%);
+}
+
+.header.light {
+  background-color: hsl(0, 0%, 98%);
+}
+
+.header-title.dark,
+.header-theme-mode-button.dark {
+  color: white;
+}
+
+.header-title.light,
+.header-theme-mode-button.light {
+  color: hsl(200, 15%, 8%);
+}
+
 /***********FONT FAMILIES****************/
 
 @font-face {

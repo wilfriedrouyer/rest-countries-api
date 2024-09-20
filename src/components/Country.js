@@ -6,6 +6,7 @@ import { GetCountry } from '../api/CountriesApi';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { FormateNumber } from '../helper/Formatter';
+import { useTheme } from './ThemeContext';
 
 export default function Country() {
   const { id } = useParams();
@@ -16,6 +17,8 @@ export default function Country() {
   const [borders, setBorders] = useState([]);
   const [loadingCountries, setLoadingCountries] = useState(true);
   const [loadingBorders, setLoadingBorders] = useState(true);
+
+  const { mode } = useTheme();
 
   useEffect(() => {
     const LoadCountry = async () => {
@@ -117,7 +120,7 @@ export default function Country() {
             value=""
             onClick={BackHome}
           >
-            <div className="back-home-input">
+            <div className={`back-home-input ${mode}`}>
               <FontAwesomeIcon className="icon-left-arrow" icon={faArrowLeft} />
               Back
             </div>
@@ -131,35 +134,35 @@ export default function Country() {
               />
             </div>
             <div className="country-infos country-datas">
-              <div className="country-name country-detail-text">
+              <div className={`country-name country-detail-text ${mode}`}>
                 {country.name.common}
               </div>
               <div className="country-infos-detail">
                 <div className="country-infos-detail-column country-infos-detail-first-column">
                   <div className="country-detail">
-                    <p className="country-detail-text">
+                    <p className={`country-detail-text ${mode}`}>
                       <b>Native Name:</b>&nbsp;
                       {GetNativeName(country.name.nativeName)}
                     </p>
                   </div>
                   <div className="country-detail">
-                    <p className="country-detail-text">
+                  <p className={`country-detail-text ${mode}`}>
                       <b>Population:</b>&nbsp;
                       {FormateNumber(country.population)}
                     </p>
                   </div>
                   <div className="country-detail">
-                    <p className="country-detail-text">
+                  <p className={`country-detail-text ${mode}`}>
                       <b>Region:</b>&nbsp;{country.region}
                     </p>
                   </div>
                   <div className="country-detail">
-                    <p className="country-detail-text">
+                  <p className={`country-detail-text ${mode}`}>
                       <b>Sub Region:</b>&nbsp;{country.subregion}
                     </p>
                   </div>
                   <div className="country-detail">
-                    <p className="country-detail-text">
+                  <p className={`country-detail-text ${mode}`}>
                       <b>Capital:</b>&nbsp;
                       {country.capital && country.capital[0]}
                     </p>
@@ -167,12 +170,12 @@ export default function Country() {
                 </div>
                 <div className="country-infos-detail-column country-infos-detail-second-column">
                   <div className="country-detail">
-                    <p className="country-detail-text">
+                  <p className={`country-detail-text ${mode}`}>
                       <b>Top Level Domain:</b>&nbsp;{country.tld.join(', ')}
                     </p>
                   </div>
                   <div className="country-detail">
-                    <p className="country-detail-text">
+                  <p className={`country-detail-text ${mode}`}>
                       <b>Currencies:</b>&nbsp;
                       {country.currencies &&
                         Object.values(country.currencies)
@@ -181,7 +184,7 @@ export default function Country() {
                     </p>
                   </div>
                   <div className="country-detail">
-                    <p className="country-detail-text">
+                  <p className={`country-detail-text ${mode}`}>
                       <b>Languages:</b>&nbsp;
                       {country.languages &&
                         Object.values(country.languages).join(', ')}
@@ -190,30 +193,30 @@ export default function Country() {
                 </div>
               </div>
               <div className="country-border">
-                <p className="country-detail-text border-content">
+                <p className={`border-content ${mode}`}>
                   <b>Border Countries:</b>
                   <div className="borders">
-                  {country.borders &&
-                    country.borders.map((border) => {
-                      const borderCountry = borders.find(
-                        (b) => b.cca3 === border
-                      );
-                      if (borderCountry) {
-                        return (
-                          <Link
-                            className="border-link"
-                            to={`/country/${borderCountry.ccn3}`}
-                            state={{ country: borderCountry }}
-                            key={borderCountry.ccn3}
-                          >
-                            {borderCountry.name.common}
-                          </Link>
+                    {country.borders &&
+                      country.borders.map((border) => {
+                        const borderCountry = borders.find(
+                          (b) => b.cca3 === border
                         );
-                      }
+                        if (borderCountry) {
+                          return (
+                            <Link
+                              className={`border-link ${mode}`}
+                              to={`/country/${borderCountry.ccn3}`}
+                              state={{ country: borderCountry }}
+                              key={borderCountry.ccn3}
+                            >
+                              {borderCountry.name.common}
+                            </Link>
+                          );
+                        }
 
-                      return null;
-                    })}
-                    </div>
+                        return null;
+                      })}
+                  </div>
                 </p>
               </div>
             </div>

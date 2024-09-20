@@ -115,6 +115,36 @@
   color: inherit;
 }
 
+.border-link.dark {
+  background-color: hsl(209, 23%, 22%);
+  box-shadow: 0px 0px 10px hsl(213, 28%, 15%);
+}
+
+.border-link.light {
+  background-color: hsl(0, 0%, 100%);
+  box-shadow: 0px 0px 10px hsl(0, 0%, 90%);
+}
+
+.back-home-input.dark {
+  background-color: hsl(209, 23%, 22%);
+  color: white;
+  box-shadow: 0px 0px 10px hsl(213, 28%, 15%);
+}
+
+.back-home-input.light {
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(200, 15%, 8%);
+  box-shadow: 0px 0px 10px hsl(0, 0%, 90%);
+}
+
+.country-detail-text.dark, .border-content.dark {
+  color: white;
+}
+
+.country-detail-text.light, .border-content.light {
+  color: hsl(200, 15%, 8%);
+}
+
 /***********FONT FAMILIES****************/
 
 @font-face {

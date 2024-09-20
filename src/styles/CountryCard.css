@@ -51,6 +51,25 @@
   content: '';
 }
 
+.card-country.dark,
+.card-country-infos.dark,
+.card-country-title.dark {
+  background-color: hsl(209, 23%, 22%);
+  color: white;
+}
+
+.card-country.light,
+.card-country-infos.light,
+.card-country-title.light {
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(200, 15%, 8%);
+}
+
+.card-country-infos.light,
+.card-country-title.light {
+  color: hsl(200, 15%, 8%);
+}
+
 /***********FONT FAMILIES****************/
 
 @font-face {

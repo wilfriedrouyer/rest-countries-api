@@ -63,4 +63,32 @@
   color: inherit;
   background-color: transparent;
   margin-top: 50px;
+
+.control-country.dark,
+.select-region.dark {
+  background-color: hsl(209, 23%, 22%);
+  color: white;
+}
+
+.search-country.light,
+.control-country.light,
+.select-region.light {
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(200, 15%, 8%);
+}
+
+.search-bar.dark::placeholder {
+  color: white;
+}
+
+.search-bar.light::placeholder {
+  color: hsl(200, 15%, 8%);
+}
+
+/***********FONT FAMILIES****************/
+
+@font-face {
+  font-family: 'NunitoSans';
+  src: url('..//assets/fonts/Nunito_Sans/NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf')
+    format('truetype');
 }

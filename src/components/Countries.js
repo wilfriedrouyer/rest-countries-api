@@ -7,16 +7,17 @@ import { GetCountries } from '../api/CountriesApi';
 import CountryCard from './CountryCard';
 
 import '../styles/Countries.css';
+import { useTheme } from './ThemeContext';
 
 export default function Countries() {
   const [countries, setCountries] = useState([]);
   const [error, setError] = useState(null);
-
   const [nameFilter, setNameFilter] = useState('');
-
   const [regionFilter, setRegionFilter] = useState('default');
 
   const regions = ['Africa', 'America', 'Asia', 'Europe', 'Oceania'];
+
+  const { mode } = useTheme();
 
   useEffect(() => {
     const loadCountries = async () => {
@@ -46,16 +47,16 @@ export default function Countries() {
   return (
     <div className="container">
       <div className="controls">
-        <div className="search-country">
+        <div className={`control-country search-control ${mode}`}>
           <FontAwesomeIcon className="icon-search-bar" icon={faSearch} />
           <input
-            className="control-country search-bar"
+            className={`search-bar ${mode}`}
             placeholder="Search for a country..."
             onChange={filterCountry}
           />
         </div>
         <select
-          className="control-country select-region"
+          className={`control-country select-region ${mode}`}
           onChange={filterRegion}
         >
           <option value="default">Filter by Region</option>
