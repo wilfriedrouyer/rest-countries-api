@@ -70,7 +70,11 @@ export default function Country() {
     navigate('/');
   };
 
-  console.log(country);
+
+  const GetNativeName = (nativeNames) => {
+    const nativeNamesObject = Object.values(nativeNames);
+    return nativeNamesObject[nativeNamesObject.length - 1].common;
+  };
 
   return (
     <>
@@ -104,7 +108,8 @@ export default function Country() {
                 <div className="country-infos-detail-column country-infos-detail-first-column">
                   <div className="country-detail">
                     <p className="country-detail-text">
-                      <b>Native Name:</b>&nbsp;{country.name.official}
+                      <b>Native Name:</b>&nbsp;
+                      {GetNativeName(country.name.nativeName)}
                     </p>
                   </div>
                   <div className="country-detail">
