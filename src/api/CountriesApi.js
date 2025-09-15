@@ -6,7 +6,7 @@ const apiVersion = 'v3.1';
 const apiUrl = `${baseUrl}/${apiVersion}`;
 
 export const GetCountries = async () => {
-  const param = 'all';
+  const param = 'all?fields=name,flags';
   try {
     return await FetchDatas(param);
   } catch (error) {
