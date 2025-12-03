@@ -166,7 +166,7 @@ export default function Country() {
                 <div className="country-infos-detail-column country-infos-detail-second-column">
                   <div className="country-detail">
                   <p className={`country-detail-text ${mode}`}>
-                      <b>Top Level Domain:</b>&nbsp;{country.tld.join(', ')}
+                      <b>Top Level Domain:</b>&nbsp;{country.tld != null ? country.tld.join(', ') : ""}
                     </p>
                   </div>
                   <div className="country-detail">
