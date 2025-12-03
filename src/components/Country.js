@@ -200,7 +200,7 @@ export default function Country() {
                           return (
                             <Link
                               className={`border-link ${mode}`}
-                              to={`/country/${borderCountry.ccn3}`}
+                              to={`/country/${borderCountry.cca3}`}
                               state={{ country: borderCountry }}
                               key={borderCountry.ccn3}
                             >
