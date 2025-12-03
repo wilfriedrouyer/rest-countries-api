@@ -22,12 +22,12 @@ export default function Country() {
 
   useEffect(() => {
     const LoadCountry = async () => {
-        const fetchedCountry = await GetCountry(id);
-        if (fetchedCountry) {
-          setCountry(fetchedCountry[0]);
-          setBorders([]);
-        } else {
-          console.log('Failed to load countries');
+      const fetchedCountry = await GetCountry(id);
+      if (fetchedCountry) {
+        setCountry(fetchedCountry[0]);
+        setBorders([]);
+      } else {
+        console.log('Failed to load countries');
       }
 
       setLoadingCountries(false);
