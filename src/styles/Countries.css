@@ -76,6 +76,12 @@
   margin-left: 20px;
   border-radius: 5px;
 }
+
+.search-bar.search-bar.dark
+{
+  color: white;
+}
+
 .icon-search-bar {
   margin-left: 25px;
 }

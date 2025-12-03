@@ -22,24 +22,19 @@ export default function Country() {
 
   useEffect(() => {
     const LoadCountry = async () => {
-      if (location.state === null) {
-        const fetchedCountry = await GetCountry(id);
-        if (fetchedCountry) {
-          setCountry(fetchedCountry[0]);
-          setBorders([]);
-        } else {
-          console.log('Failed to load countries');
-        }
-      } else {
-        setCountry(location.state.country);
+      const fetchedCountry = await GetCountry(id);
+      if (fetchedCountry) {
+        setCountry(fetchedCountry[0]);
         setBorders([]);
+      } else {
+        console.log('Failed to load countries');
       }
 
       setLoadingCountries(false);
     };
 
     LoadCountry(id);
-  }, [id, location.state, country]);
+  }, [id]);
 
   useEffect(() => {
     const LoadBorders = () => {
@@ -171,7 +166,7 @@ export default function Country() {
                 <div className="country-infos-detail-column country-infos-detail-second-column">
                   <div className="country-detail">
                   <p className={`country-detail-text ${mode}`}>
-                      <b>Top Level Domain:</b>&nbsp;{country.tld.join(', ')}
+                      <b>Top Level Domain:</b>&nbsp;{country.tld != null ? country.tld.join(', ') : ""}
                     </p>
                   </div>
                   <div className="country-detail">
@@ -205,7 +200,7 @@ export default function Country() {
                           return (
                             <Link
                               className={`border-link ${mode}`}
-                              to={`/country/${borderCountry.ccn3}`}
+                              to={`/country/${borderCountry.cca3}`}
                               state={{ country: borderCountry }}
                               key={borderCountry.ccn3}
                             >
