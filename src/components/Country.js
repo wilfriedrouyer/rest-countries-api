@@ -22,24 +22,19 @@ export default function Country() {
 
   useEffect(() => {
     const LoadCountry = async () => {
-      if (location.state === null) {
         const fetchedCountry = await GetCountry(id);
         if (fetchedCountry) {
           setCountry(fetchedCountry[0]);
           setBorders([]);
         } else {
           console.log('Failed to load countries');
-        }
-      } else {
-        setCountry(location.state.country);
-        setBorders([]);
       }
 
       setLoadingCountries(false);
     };
 
     LoadCountry(id);
-  }, [id, location.state, country]);
+  }, [id]);
 
   useEffect(() => {
     const LoadBorders = () => {
